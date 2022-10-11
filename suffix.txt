@@ -1,0 +1,3 @@
+    <Filter name="parentObjectType" criteria="EQUALS">Projects</Filter>
+   </DocumentQuery>
+  </NikuDataBus>

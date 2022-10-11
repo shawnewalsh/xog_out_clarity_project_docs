@@ -1,0 +1,30 @@
+<gel:script xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:core="jelly:core"
+    xmlns:gel="jelly:com.niku.union.gel.GELTagLibrary"
+    xmlns:soap="jelly:com.niku.union.gel.SOAPTagLibrary"
+    xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:sql="jelly:sql"
+    xmlns:xog="http://www.niku.com/xog"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+
+  <!--  query to get project id's with documents or folders
+   select distinct id from inv_investments; -->
+
+  <gel:setDataSource dbId="niku"/>
+  <sql:query var="result">
+    select id from inv_investments
+  </sql:query>
+
+
+  <core:forEach trim="true" items="${result.rowsByIndex}" var="row">
+    <core:forEach var="field" items="${row}">
+      <gel:out>${field}</gel:out>
+ </core:forEach>
+ </core:forEach>
+
+
+
+
+</gel:script>
